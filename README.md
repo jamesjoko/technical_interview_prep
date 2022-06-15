@@ -1,2 +1,2 @@
 # Contact Me:
-## LinkedIn:
+LinkedIn: https://www.linkedin.com/in/jamesjoko/
