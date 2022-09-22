@@ -1,0 +1,66 @@
+Links:
+https://leetcode.com/list/xixy4dq7/
+https://www.reddit.com/r/leetcode/comments/n2bcwh/list_of_questions_of_amazon/
+
+
+Easy Problems
+
+
+Two-Sum
+input: arr - list, target - int
+
+initialize heap h
+for each element in arr:
+    if element in h:
+        return True
+    else:
+        append (target-element) to h
+return False
+
+
+Palindrome Number
+input: x - int
+
+return whether the string of x is the same as the reverse string of x
+
+
+
+Medium Problems
+
+
+https://i.redd.it/biv6pvk4vc681.png - very similar to number of 3-length inversions
+input: book - str
+
+initialize int result
+for each element from index 1 to -2:
+    set complement to (element - 1) * -1 
+    set count_left to number of complements to left
+    set count_right number of complements to right
+    add count_left * count_right to result
+return result
+
+
+Number of Islands
+input: arr - list[list[int]]
+
+define dfs(row, col, arr):
+    if row, col are out of bounds or arr[row][col] == 0:
+        return
+    call dfs on north, east, south, west
+
+for each row in arr:
+    for each col in row:
+        if arr[row][col] == 1:
+            dfs(row, col, arr)
+
+
+Partition Labels - partition the string into as many parts as possible so that each letter appears in at most one part.
+input: s - str
+
+set last_seen dictionary with letter:last_index as key:value
+initialize result - list
+for index, char in enumerate(s):
+    set end to max(end, last_seen[c]):
+        if end == i: #no other previous charcters are seen later
+            append (end - start + 1) to result 
+return result
