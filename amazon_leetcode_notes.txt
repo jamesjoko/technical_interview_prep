@@ -33,10 +33,10 @@ input: book - str
 
 initialize int result
 for each element from index 1 to -2:
-    set complement to (element - 1) * -1 
-    set count_left to number of complements to left
-    set count_right number of complements to right
-    add count_left * count_right to result
+    complement = (element - 1) * -1 
+    count_left = number of complements to left
+    count_right = number of complements to right
+    result += count_left * count_right
 return result
 
 
@@ -64,3 +64,4 @@ for index, char in enumerate(s):
         if end == i: #no other previous charcters are seen later
             append (end - start + 1) to result 
 return result
+
