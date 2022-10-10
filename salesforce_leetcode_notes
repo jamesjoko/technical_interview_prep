@@ -1,0 +1,56 @@
+Merge Intervals 
+https://leetcode.com/problems/merge-intervals/ 
+Keywords: Sorting using key, Arrays
+One-line Solution: Sort intervals by first number and loop through intervals. If lower bound of second interval is less than or equal to the high bound of the first interval, set the high bound of the first interval to max(high bound interval 1, high bound interval 2) and delete the second interval.
+
+Maximum Product of Three Numbers
+https://leetcode.com/problems/maximum-product-of-three-numbers/
+Keywords: Array, Sorting
+One-line Solution: Sort array. Multiple three largest numbers and three smallest numbers (because of negatives) and return the largest.
+
+Largest Number
+https://leetcode.com/problems/largest-number/
+Keywords: Sorting, String
+One-line Solution: Sort the numbers using a custom compare function and sort in descending order. Then combine the sorted strings into one final one
+
+Number of Islands
+https://leetcode.com/problems/number-of-islands/
+Keywords: DFS/BFS, Matrix
+One-line Solution: Scan through the entire matrix looking for ones. When you find a one, run DFS. In DFS, base case is out of bounds or value is not 1. Otherwise, set the value to “0” (in-place) and run DFS on surrounding values.
+A variation of this problem is to find which person is closest to a treasure. Find the treasure and run BFS on it, stopping when the first person is found.
+
+Integer to English Words
+https://leetcode.com/problems/integer-to-english-words/
+Keywords: Recursion, Math, String
+One-line Solution: Create two lists: One with the strings from “One”-”Nineteen” and tens place from “Twenty”, “Thirty”, …, “Ninety”. Create a recursive function with the following conditions: 
+If number (n) < 20, return element n-1 from the first list. 
+If n < 100, return element n//10-2 from the second list plus recursive call n%10. 
+If n < 1000, return element n//100-1 from the first list + “Hundred” + recursive call n%100. 
+Less than million, billion, and trillion have the same pattern. Make the following enumerate object [(1, 'Thousand'), (2, 'Million'), (3, 'Billion')]. Each tuple is (power, word). If n < 1000^(power + 1), return recursive call n//1000**power + [word] + recursive call n%1000**power. When the call completes, return a join of all the recursively created lists
+
+Sort Colors
+https://leetcode.com/problems/sort-colors/
+Keywords: Two pointers, sorting
+This is the dutch partitioning problem: https://en.wikipedia.org/wiki/Dutch_national_flag_problem
+One-line Solution: There are pointers for each color, red, white, blue. Red starts at 0, Blue starts at 0, White starts at end of array. While white <= blue: If nums[white] == 0, swap the values of the red and white pointer, then increment both pointers by 1. If nums[white] == 1, increment white pointer by 1. Otherwise(value of white pointer is 2-blue), swap the values of the white and blue pointer and decrement the blue pointer by 1
+
+Maximum Subarray
+https://leetcode.com/problems/maximum-subarray/
+Keywords: DP
+Solution: The idea here is that if we encounter a number (n) that causes the current subarray sum to be less than n, we restart the subarray because the candidate number tanks the subarray sum. 
+
+Set a currSum and maxSum to the first element. Scan through the 1st to last element:
+Set currSum to max(num, currSum)
+Set maxSum to max(maxSum, currSum)
+
+Group Anagrams
+https://leetcode.com/problems/group-anagrams/
+Keywords: sorting, hash table
+One-line Solution: Idea is that words are anagrams if the sorted version of the word is the same. Create a dictionary with key-values pairs (sorted word, list of anagrams). For each word in strs, if the sorted word is in the dictionary, add the original word. Otherwise, create a new list with the original word.
+
+
+
+N
+L
+Keywords: 
+One-line Solution: 
