@@ -1,0 +1,4 @@
+Array:
+Boyer–Moore majority vote algorithm - find majority of a sequence of elements. O(n) time, O(1) space
+
+Graph:
