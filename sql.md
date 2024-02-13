@@ -18,11 +18,40 @@ SELECT employee_number, name
          WHERE department = emp.department);
 ```
 
-• Aggregations
-• “Where” versus “having”
-• Handling NULL values
-• Case statements, etc.
-• Filters
-• Groupings
-• Rankings
-• Verifying results and taking care of exceptions and NULL handling
+# Aggregations
+- count
+- sum
+- min
+- max
+- avg
+
+# “Where” versus “having”
+WHERE cannot be used with aggregates, HAVING can
+
+# Handling NULL values
+- IS NULL, IS NOT NULL. null does not work with =, <, <>
+- COALESCE(col, NULL, 1) takes the first non-null value. useful when doing left/right joins and some values are null, but want default 0
+
+# Case statements, etc.
+```
+CASE
+  WHEN condition1 THEN result1
+  WHEN condition2 THEN result2
+  ...
+  ELSE default_result
+END
+```
+
+# Filters
+- WHERE
+- can use regex with LIKE
+  - WHERE col LIKE '% S%'
+  - '% is any sequence of characters
+# Groupings
+GROUP BY
+
+# Rankings
+- ROW_NUMBER() OVER (ORDER BY col DESC) assigns a unique sequential integer to each row based on the specified ordering
+- RANK() OVER (ORDER BY col DESC) assigns a unique rank to each distinct row. rows with equal values receive the same rank and the next rank is incremented by the number of rows that received the previous rank
+- DENSE_RANK() OVER (ORDER BY col DESC) does the same as rank but does not account for ties
+- NTILE(n) OVER (ORDER BY col DESC) divides the result set into a specified number of buckets and assigns a bucket number to each row
